@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
     public float damage = 10f;
     public float range = 150f;
 
+    public GameManager gameManager;
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
     public GameObject enviormentImpact;
@@ -23,6 +24,7 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            gameManager.shotsHasBeenFired = true;
         }
     }
 
@@ -36,10 +38,9 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
-        { 
-
+        {
         Agent target = hit.transform.GetComponent<Agent>();
-
+        
 
             if (target != null)
             {

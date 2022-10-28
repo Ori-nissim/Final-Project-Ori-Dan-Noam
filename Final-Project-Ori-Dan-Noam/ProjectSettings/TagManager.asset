@@ -8,6 +8,10 @@ TagManager:
   - FxTemporaire
   - EnemyBullet
   - Human
+  - Enterable
+  - Money
+  - Agent
+  - RobberBullet
   layers:
   - Default
   - TransparentFX
